@@ -1,6 +1,9 @@
 import { getArticleById } from '../utils/api';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Comments from './Comments';
+import Votes from './Votes';
+import PostComment from './PostComment';
 
 const Article = () => {
   const params = useParams();
@@ -13,17 +16,22 @@ const Article = () => {
   }, [params.article_id]);
 
   return (
-    <div className="Article">
-      <h2>{article.title}</h2>
+    <>
+      <div className="Article">
+        <h2>{article.title}</h2>
+        <br />
+        <p>Posted by: {article.author}</p>
+        <br />
+        <p>Date posted: {article.created_at}</p>
+        <br />
+        <p>{article.body}</p>
+        <br />
+        <Votes article={article} />
+      </div>
+      <PostComment />
       <br />
-      <p>Posted by: {article.author}</p>
-      <br />
-      <p>Date posted: {article.created_at}</p>
-      <br />
-      <p>{article.body}</p>
-      <br />
-      <p>Votes: {article.votes}</p>
-    </div>
+      <Comments />
+    </>
   );
 };
 

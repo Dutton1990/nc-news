@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
-  const [sortby, setSortby] = useState([]);
+  // const [sortby, setSortby] = useState([]);
   const params = useParams();
 
   useEffect(() => {
@@ -14,10 +14,11 @@ const Articles = () => {
       }
     );
   }, [params.topic]);
+
   return (
     <div className="Articles">
       <h2>{params.topic ? `${params.topic.toUpperCase()}` : 'All Articles'}</h2>
-      <form>
+      {/* <form>
         <label>Sort by:</label>
         <select
           className="dropdown"
@@ -30,7 +31,7 @@ const Articles = () => {
           <option value="title">Title</option>
           <option value="created_at">Created At</option>
         </select>
-      </form>
+      </form> */}
       <ul>
         {articles.map(({ title, topic, author, article_id }) => {
           return (
