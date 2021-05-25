@@ -1,27 +1,22 @@
 import { useState } from 'react';
-import { patchVotes } from '../utils/api'
+import { patchVotes } from '../utils/api';
 
 const Votes = ({ article }) => {
   const [votes, setVotes] = useState(0);
 
   const increaseVotes = (event) => {
     event.preventDefault();
-    setVotes((currVotes) => currVotes + 1)
-    patchVotes(article.article_id.votes);
+    setVotes((currVotes) => currVotes + 1);
+    console.log(article.article_id);
+    patchVotes(article.article_id);
   };
-
-//   const handleSendMessageClick = () => {
-//     setSentMessageCount((currCount) => currCount + 1);
-//     api.sendMessage();
-//   };
-
-  // need to patch request this - optimistic rendering
 
   return (
     <>
-      <label htmlFor="votes">Votes: {article.votes + votes}</label>< br/>
+      <label htmlFor="votes">Votes: {article.votes + votes}</label>
+      <br />
       <button id="votes" value="votes" type="button" onClick={increaseVotes}>
-      Upvote
+        Upvote
       </button>
     </>
   );

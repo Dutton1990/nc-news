@@ -26,10 +26,12 @@ export const getArticleById = async (article_id) => {
 
 export const getCommentsByArticleId = async (article_id) => {
   const { data } = await newsApi.get(`/articles/${article_id}/comments`);
-  return data.comments
-}
+  return data.comments;
+};
 
 export const patchVotes = async (article_id) => {
-  const { data } = await newsApi.patch(`/articles/${article_id}`, { votes: +1})
-  return data.votes;
-}
+  const { data } = await newsApi.patch(`/articles/${article_id}`, {
+    inc_votes: 1,
+  });
+  return data;
+};
