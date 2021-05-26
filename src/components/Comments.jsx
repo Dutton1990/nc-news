@@ -1,27 +1,18 @@
-import { getCommentsByArticleId } from '../utils/api'
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import useComments from '../hooks/useComments';
+import AddComment from './AddComment'
 
-
-
-const Comments = () => {
-  const [comments, setComments] = useState([]);
-  const params = useParams();
-
-  useEffect(() => {
-    getCommentsByArticleId(params.article_id).then((commentsFromApi) => {
-      setComments(commentsFromApi);
-    });
-  }, [params.article_id]);
+const Comments = ({article_id}) => {
+  const { comments, setComments } = useComments();
 
   return (
     <>
+    <AddComment setComments={setComments} article_id={article_id}/>
       <div className="Comments">
         <h3>Comments</h3>
         <br />
+        <ul >
         {comments.map((comment) => {
           return (
-            <ul>
               <li key={comment.comment_id}>
                 <p>{comment.body}</p>
                 <br />
@@ -29,9 +20,9 @@ const Comments = () => {
                 <br />
                 <p>Votes: {comment.votes}</p>
               </li>
-            </ul>
           );
         })}
+        </ul>
       </div>
     </>
   );

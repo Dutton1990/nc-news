@@ -15,9 +15,9 @@ const Nav = () => {
     <nav className="Nav">
       {topics.map((topic) => {
         return (
-          <ul>
+          <ul key={topic.slug}>
             <li>
-              <Link key={topic.slug} to={`/topics/${topic.slug}`}>
+              <Link  to={`/topics/${topic.slug}`}>
                 {topic.slug.toUpperCase()}
               </Link>
             </li>

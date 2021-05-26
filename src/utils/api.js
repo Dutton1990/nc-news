@@ -22,11 +22,11 @@ export const sortArticles = async (sortby, order) => {
   const { data } = await newsApi.get('/articles', {
     params: {
       sort_by: 'title',
-      order: 'desc'
-    }
-  })
-  return data.articles
-}
+      order: 'desc',
+    },
+  });
+  return data.articles;
+};
 
 export const getArticleById = async (article_id) => {
   const { data } = await newsApi.get(`/articles/${article_id}`);
@@ -43,4 +43,13 @@ export const patchVotes = async (article_id) => {
     inc_votes: 1,
   });
   return data;
+};
+
+export const postCommentToArticle = async (article_id, user, body) => {
+  const { data } = await newsApi.post(`articles/${article_id}/comments`, {
+    username: user.username,
+    body: body,
+  });
+  console.log(data);
+  return data.comment[0];
 };

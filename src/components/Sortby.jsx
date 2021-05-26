@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import { sortArticles } from '../utils/api'
 
 
 const Sortby = ({ articles, setArticles }) => {
   const [sortby, setSortBy] = useState('show-all');
-  const params = useParams();
 
   useEffect(() => {
     sortArticles(sortby).then(
@@ -13,7 +11,7 @@ const Sortby = ({ articles, setArticles }) => {
         setArticles(articlesFromApi);
       }
     );
-  }, [sortby]);
+  }, [sortby, setArticles]);
 
     return (
         <form>

@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Comments from './Comments';
 import Votes from './Votes';
-import PostComment from './PostComment';
 
 const Article = () => {
   const params = useParams();
@@ -28,9 +27,9 @@ const Article = () => {
         <br />
         <Votes article={article} />
       </div>
-      <PostComment />
+      
       <br />
-      <Comments />
+      <Comments article_id={params.article_id}/>
     </>
   );
 };
