@@ -27,7 +27,7 @@ const Articles = ({isLoading, setIsLoading}) => {
         <Sortby articles={articles} setArticles={setArticles} />
         <ul>
           {articles.map(
-            ({ title, topic, author, article_id, created_at, votes }) => {
+            ({ title, topic, author, article_id, created_at, votes, comment_count}) => {
               return (
                 <li key={article_id}>
                   <Link to={`/articles/${article_id}`}>
@@ -37,6 +37,7 @@ const Articles = ({isLoading, setIsLoading}) => {
                   <h5>Author: {author}</h5>
                   <h5>Created at: {created_at}</h5>
                   <h5>Votes: {votes}</h5>
+                  <h5>Comments: {comment_count}</h5>
                 </li>
               );
             }

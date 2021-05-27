@@ -32,6 +32,7 @@ const Sortby = ({ articles, setArticles }) => {
           <option value="title">Title</option>
           <option value="created_at">Created At</option>
           <option value="votes">Votes</option>
+          <option value="comment_count">Comment count</option>
         </select>
         </form> 
         
@@ -39,7 +40,6 @@ const Sortby = ({ articles, setArticles }) => {
           <button onClick={() => setSortOrder('ASC')}>Ascending</button>
        
         </>
-// {sortOrder === 'ASC' ? 'Ascending' : 'Descending'}
 
     )
 
