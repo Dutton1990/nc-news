@@ -11,24 +11,25 @@ function App() {
   const [user] = useState({
     username: 'jessjelly',
   });
+  const [isLoading, setIsLoading] = useState(true);
   return (
-    <>
-      <UserContext.Provider value={user}>
-        <Header />
+    <UserContext.Provider value={user}>
+      <Header />
+      <div class="columns is-mobile">
         <Nav />
         <Switch>
           <Route exact path="/">
-            <Articles />
+            <Articles isLoading={isLoading} setIsLoading={setIsLoading} />
           </Route>
           <Route exact path="/topics/:topic">
-            <Articles />
+            <Articles isLoading={isLoading} setIsLoading={setIsLoading} />
           </Route>
           <Route exact path="/articles/:article_id">
-            <Article />
+            <Article isLoading={isLoading} setIsLoading={setIsLoading} />
           </Route>
         </Switch>
-      </UserContext.Provider>
-    </>
+      </div>
+    </UserContext.Provider>
   );
 }
 

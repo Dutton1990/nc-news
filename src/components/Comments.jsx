@@ -6,8 +6,8 @@ const Comments = ({article_id}) => {
 
   return (
     <>
+      <div class="column">
     <AddComment setComments={setComments} article_id={article_id}/>
-      <div className="Comments">
         <h3>Comments</h3>
         <br />
         <ul >

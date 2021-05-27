@@ -12,19 +12,21 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="Nav">
-      {topics.map((topic) => {
-        return (
-          <ul key={topic.slug}>
-            <li>
-              <Link  to={`/topics/${topic.slug}`}>
-                {topic.slug.toUpperCase()}
-              </Link>
-            </li>
-          </ul>
-        );
-      })}
-    </nav>
+    
+      <nav class="column">
+        {topics.map((topic) => {
+          return (
+            <ul key={topic.slug}>
+              <li>
+                <Link to={`/topics/${topic.slug}`}>
+                  {topic.slug.toUpperCase()}
+                </Link>
+              </li>
+            </ul>
+          );
+        })}
+      </nav>
+    
   );
 };
 

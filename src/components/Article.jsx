@@ -4,19 +4,21 @@ import { useState, useEffect } from 'react';
 import Comments from './Comments';
 import Votes from './Votes';
 
-const Article = () => {
+const Article = ({isLoading, setIsLoading}) => {
   const params = useParams();
   const [article, setArticle] = useState([]);
 
   useEffect(() => {
     getArticleById(params.article_id).then((articleFromApi) => {
+      setIsLoading(false)
       setArticle(articleFromApi);
     });
-  }, [params.article_id]);
+  }, [params.article_id, setIsLoading]);
 
   return (
     <>
       <div className="Article">
+      {isLoading && <p>Loading...</p>}
         <h2>{article.title}</h2>
         <br />
         <p>Posted by: {article.author}</p>
