@@ -24,9 +24,8 @@ const AddComment = ({ article_id, setComments }) => {
 
   return (
     <>
-      <form onSubmit={newComment}>
-        <label>Add a comment:</label>
-        <input onChange={updateComment} value={postComment} type="text"></input>
+      <form class="box column" onSubmit={newComment}>
+        <input onChange={updateComment} value={postComment} type="text" class="textarea is-info" placeholder="Add a comment"></input>
         <button>Post!</button>
       </form>
     </>

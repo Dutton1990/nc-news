@@ -12,21 +12,28 @@ const Nav = () => {
   }, []);
 
   return (
-    
-      <nav class="column">
+        <>
+      <nav class="column is-one-quarter menu">
+    <p class="menu-label">
+            TOPICS
+        </p>
         {topics.map((topic) => {
           return (
-            <ul key={topic.slug}>
-              <li>
+            
+            <ul class="menu-label" key={topic.slug}>
+              <li class="menu-list">
                 <Link to={`/topics/${topic.slug}`}>
                   {topic.slug.toUpperCase()}
                 </Link>
               </li>
             </ul>
           );
-        })}
+          
+        })
+      }
       </nav>
     
+      </>
   );
 };
 

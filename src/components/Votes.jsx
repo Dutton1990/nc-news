@@ -16,7 +16,7 @@ const Votes = ({ article }) => {
     <>
       <label htmlFor="votes">Votes: {article.votes + votes}</label>
       <br />
-      <button id="votes" value="votes" type="button" onClick={increaseVotes} disabled={disabled}>
+      <button class="button is-small" id="votes" value="votes" type="button" onClick={increaseVotes} disabled={disabled}>
         Upvote
       </button>
     </>

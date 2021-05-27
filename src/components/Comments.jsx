@@ -13,11 +13,10 @@ const Comments = ({article_id}) => {
         <ul >
         {comments.map((comment) => {
           return (
-              <li key={comment.comment_id}>
+              <li class="block box" key={comment.comment_id}>
                 <p>{comment.body}</p>
                 <br />
                 <p>Posted by: {comment.author}</p>
-                <br />
                 <p>Votes: {comment.votes}</p>
               </li>
           );
