@@ -33,15 +33,15 @@ const Sortby = ({ articles, setArticles }) => {
       <div class="block">
         <button
           class="button is-link is-light is-small"
-          onClick={() => setSortOrder('DESC')}
-        >
-          Descending
-        </button>
-        <button
-          class="button is-link is-light is-small"
           onClick={() => setSortOrder('ASC')}
         >
           Ascending
+        </button>
+        <button
+          class="button is-link is-light is-small"
+          onClick={() => setSortOrder('DESC')}
+        >
+          Descending
         </button>
       </div>
     </>

@@ -62,16 +62,7 @@ li {
   z-index:100;
 }
 
-.menu-list {
-  position: sticky;
-  top: 150px;
-  width:100%;
-  z-index:100;
-}
-
-.menu-label {
-  position: sticky;
-  top: 150px;
-  width:100%;
-  z-index:100;
-}
+/* nav {
+  position: fixed;
+  top: 0;
+} */
