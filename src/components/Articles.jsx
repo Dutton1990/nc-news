@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { getArticles } from '../utils/api';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Sortby from './Sortby';
+import ArticleCard from './ArticleCard'
 
-const Articles = ({isLoading, setIsLoading}) => {
+const Articles = ({isLoading, setIsLoading, isErr, setIsErr}) => {
   const [articles, setArticles] = useState([]);
   
 
@@ -14,13 +15,20 @@ const Articles = ({isLoading, setIsLoading}) => {
       setIsLoading(false)
       setArticles(articlesFromApi)
       ;
+    }).catch((err) => {
+      console.log(err)
+      setIsErr(true)
     });
-  }, [params.topic, setIsLoading]);
+  }, [params.topic, setIsLoading, setIsErr]);
+
+  if (isErr) return <p>There's been an error! Please try again :)</p>
+
 
   return (
     
     <div class="column">
-        {isLoading && <p>Loading...</p>}
+         { (isLoading) ? <p>Loading...</p> :
+         <>
         <section>
 
 
@@ -29,24 +37,9 @@ const Articles = ({isLoading, setIsLoading}) => {
         </h2>
         </section>
         <Sortby articles={articles} setArticles={setArticles} />
-        <ul>
-          {articles.map(
-            ({ title, topic, author, article_id, created_at, votes, comment_count}) => {
-              return (
-                <li class="block box" key={article_id}>
-                  <Link to={`/articles/${article_id}`}>
-                    <h3>{title}</h3>
-                  </Link>
-                  <h4>Topic: {topic}</h4>
-                  <h5>Author: {author}</h5>
-                  <h5>Created on: {created_at.slice(0,10)}</h5>
-                  <h5>Votes: {votes}</h5>
-                  <h5>Comments: {comment_count}</h5>
-                </li>
-              );
-            }
-          )}
-        </ul>
+        <ArticleCard articles={articles}/>
+        </>
+         }
       </div>
   );
 };

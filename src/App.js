@@ -12,20 +12,21 @@ function App() {
     username: 'jessjelly',
   });
   const [isLoading, setIsLoading] = useState(true);
+  const [isErr, setIsErr] = useState(false)
   return (
     <UserContext.Provider value={user}>
       <Header />
       <div class="columns is-mobile">
-        <Nav />
+        <Nav isErr={isErr} setIsErr={setIsErr}/>
         <Switch>
           <Route exact path="/">
-            <Articles isLoading={isLoading} setIsLoading={setIsLoading} />
+            <Articles isLoading={isLoading} setIsLoading={setIsLoading} isErr={isErr} setIsErr={setIsErr}/>
           </Route>
           <Route exact path="/topics/:topic">
-            <Articles isLoading={isLoading} setIsLoading={setIsLoading} />
+            <Articles isLoading={isLoading} setIsLoading={setIsLoading} isErr={isErr} setIsErr={setIsErr}/>
           </Route>
           <Route exact path="/articles/:article_id">
-            <Article isLoading={isLoading} setIsLoading={setIsLoading} />
+            <Article isLoading={isLoading} setIsLoading={setIsLoading} isErr={isErr} setIsErr={setIsErr}/>
           </Route>
         </Switch>
       </div>
