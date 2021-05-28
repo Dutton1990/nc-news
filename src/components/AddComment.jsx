@@ -27,7 +27,7 @@ const AddComment = ({ article_id, setComments }) => {
     <>
       <form class="box column" onSubmit={newComment}>
         <input onChange={updateComment} value={postComment} type="text" class="textarea is-info" placeholder="Add a comment" required></input>
-        <button>Post!</button>
+        <button class="button is-link is-light is-small">Post!</button>
       </form>
     </>
   );

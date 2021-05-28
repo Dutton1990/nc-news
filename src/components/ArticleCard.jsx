@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+var moment = require('moment');
 
 const ArticleCard = ({ articles }) => {
   return (
@@ -12,15 +13,17 @@ const ArticleCard = ({ articles }) => {
           created_at,
           votes,
           comment_count,
+          body,
         }) => {
           return (
-            <li class="block box" key={article_id}>
+            <li className="block box" key={article_id}>
               <Link to={`/articles/${article_id}`}>
                 <h3>{title}</h3>
               </Link>
+              <h4 className="is-hidden-mobile">{body}</h4>
               <h4>Topic: {topic}</h4>
-              <h5>Author: {author}</h5>
-              <h5>Created on: {created_at.slice(0, 10)}</h5>
+              <h5>Posted by: {author}</h5>
+              <h5>Created on: {moment(created_at).format('MMM Do YYYY')}</h5>
               <h5>Votes: {votes}</h5>
               <h5>Comments: {comment_count}</h5>
             </li>

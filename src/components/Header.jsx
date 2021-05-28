@@ -6,12 +6,10 @@ import { useContext } from 'react';
 const Header = () => {
   const user = useContext(UserContext);
   return (
-    
     <>
-    <section className="hero is-small is-primary">
-
-      <p>{`You are logged in as ${user.username}`}</p>
-    </section>
+      <section className="hero is-small is-primary">
+        <p>{`You are logged in as ${user.username}`}</p>
+      </section>
 
       <section className="hero is-info block">
         <div className="hero-body">
@@ -20,8 +18,7 @@ const Header = () => {
           </h1>
         </div>
       </section>
-      </>
-    
+    </>
   );
 };
 
