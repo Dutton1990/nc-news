@@ -15,8 +15,8 @@ const Sortby = ({ articles, setArticles }) => {
 
   return (
     <>
-      <div class="block">
-        <form class="select is-small">
+      <div className="block is-align-items-start">
+        <form className="select">
           <select
             value={sortParam}
             onChange={(event) => {
@@ -30,15 +30,15 @@ const Sortby = ({ articles, setArticles }) => {
           </select>
         </form>
       </div>
-      <div class="block">
+      <div className="block">
         <button
-          class="button is-link is-light is-small"
+          className="button is-link is-light is-small"
           onClick={() => setSortOrder('ASC')}
         >
           Ascending
         </button>
         <button
-          class="button is-link is-light is-small"
+          className="button is-link is-light is-small"
           onClick={() => setSortOrder('DESC')}
         >
           Descending

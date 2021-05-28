@@ -12,21 +12,36 @@ function App() {
     username: 'jessjelly',
   });
   const [isLoading, setIsLoading] = useState(true);
-  const [isErr, setIsErr] = useState(false)
+  const [isErr, setIsErr] = useState(false);
   return (
     <UserContext.Provider value={user}>
       <Header />
-      <div class="columns is-mobile">
-        <Nav isErr={isErr} setIsErr={setIsErr}/>
+      <div className="columns is-mobile">
+        <Nav isErr={isErr} setIsErr={setIsErr} />
         <Switch>
           <Route exact path="/">
-            <Articles isLoading={isLoading} setIsLoading={setIsLoading} isErr={isErr} setIsErr={setIsErr}/>
+            <Articles
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              isErr={isErr}
+              setIsErr={setIsErr}
+            />
           </Route>
           <Route exact path="/topics/:topic">
-            <Articles isLoading={isLoading} setIsLoading={setIsLoading} isErr={isErr} setIsErr={setIsErr}/>
+            <Articles
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              isErr={isErr}
+              setIsErr={setIsErr}
+            />
           </Route>
           <Route exact path="/articles/:article_id">
-            <Article isLoading={isLoading} setIsLoading={setIsLoading} isErr={isErr} setIsErr={setIsErr}/>
+            <Article
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
+              isErr={isErr}
+              setIsErr={setIsErr}
+            />
           </Route>
         </Switch>
       </div>

@@ -24,20 +24,17 @@ const Article = ({ isLoading, setIsLoading, isErr, setIsErr }) => {
 
   return (
     <>
-      <div class="columns is-vcentered">
-        <div class="column">
+      <div className="columns is-vcentered">
+        <div className="column">
           {isLoading ? (
             <p>Loading...</p>
           ) : (
             <>
-              <div class="box">
-                <h2 class="subtitle is-3">{article.title}</h2>
-                <br />
-                <p class="content is-small">Posted by: {article.author}</p>
-                <br />
-                <p class="content is-small">
-                  Date posted: {moment(article.created_at).format("MMM Do YYYY")}
-                </p>
+              <div className="box">
+                <h2 className="subtitle is-3">{article.title}</h2>
+                
+                <p className="content is-small">Posted by  {article.author} on{' '}
+                  {moment(article.created_at).format('MMM Do YYYY')}</p>
                 <br />
                 <p>{article.body}</p>
                 <br />

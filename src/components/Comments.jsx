@@ -1,17 +1,17 @@
 import useComments from '../hooks/useComments';
-import AddComment from './AddComment'
-import CommentsCard from './CommentsCard'
+import AddComment from './AddComment';
+import CommentsCard from './CommentsCard';
 
-const Comments = ({article_id}) => {
+const Comments = ({ article_id }) => {
   const { comments, setComments } = useComments();
 
   return (
     <>
-      <div class="column">
-    <AddComment setComments={setComments} article_id={article_id}/>
+      <div className="column">
+        <AddComment setComments={setComments} article_id={article_id} />
         <h3>Comments</h3>
         <br />
-        <CommentsCard comments={comments}/>
+        <CommentsCard comments={comments} />
       </div>
     </>
   );

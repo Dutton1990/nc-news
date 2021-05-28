@@ -12,7 +12,7 @@ const AddComment = ({ article_id, setComments }) => {
       (postedComment) => {
         setComments((currComments) => {
           const spreadComments = [postedComment, ...currComments];
-          setPostComment([])
+          setPostComment([]);
           return spreadComments;
         });
       }
@@ -25,9 +25,16 @@ const AddComment = ({ article_id, setComments }) => {
 
   return (
     <>
-      <form class="box column" onSubmit={newComment}>
-        <input onChange={updateComment} value={postComment} type="text" class="textarea is-info" placeholder="Add a comment" required></input>
-        <button class="button is-link is-light is-small">Post!</button>
+      <form className="box column" onSubmit={newComment}>
+        <input
+          onChange={updateComment}
+          value={postComment}
+          type="text"
+          className="textarea is-info"
+          placeholder="Add a comment"
+          required
+        ></input>
+        <button className="button is-link is-light is-small">Post!</button>
       </form>
     </>
   );

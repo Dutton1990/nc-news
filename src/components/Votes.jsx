@@ -28,7 +28,7 @@ const Votes = ({ article, isErr, setIsErr }) => {
       <label htmlFor="votes">Votes: {article.votes + votes}</label>
       <br />
       <button
-        class="button is-small"
+        className="button is-small"
         id="votes"
         value="votes"
         type="button"
@@ -38,7 +38,7 @@ const Votes = ({ article, isErr, setIsErr }) => {
         Upvote
       </button>
       <button
-        class="button is-small"
+        className="button is-small"
         id="votes"
         value="votes"
         type="button"
