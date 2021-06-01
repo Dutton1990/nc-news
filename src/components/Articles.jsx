@@ -16,7 +16,6 @@ const Articles = ({ isLoading, setIsLoading, isErr, setIsErr }) => {
         setArticles(articlesFromApi);
       })
       .catch((err) => {
-        console.log(err);
         setIsErr(true);
       });
   }, [params.topic, setIsLoading, setIsErr]);

@@ -42,6 +42,5 @@ export const postCommentToArticle = async (article_id, user, body) => {
     username: user.username,
     body: body,
   });
-  console.log(data);
   return data.comment[0];
 };

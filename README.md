@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Link to deployed version
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[https://christian-dutton-nc-news.netlify.app/](https://christian-dutton-nc-news.netlify.app/).
 
-## Available Scripts
+## General info
 
-In the project directory, you can run:
+This app was built by myself using React on the Northcoders bootcamp to supplement the back end project I created beforehand. 
 
-### `npm start`
+### As a user, you can:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. view a list of all articles
+2. view a page for each topic with a list of related articles.
+3. view an individual article.
+4. view an individual article's comments.
+5. vote on an article and immediately see the change.
+6. post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
+7. sort articles by:
+    date created
+    comment_count
+    votes
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+It also features error handling (including not being able to post a blank comment) and has a responsive design that alters based on screen size.
 
-### `npm test`
+### Back end links
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Back end repo - [https://github.com/Dutton1990/be-nc-news](https://github.com/Dutton1990/be-nc-news)
+Hosted version - [https://christian-nc-news.herokuapp.com/api](https://christian-nc-news.herokuapp.com/api)
 
-### `npm run build`
+### Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Note: To run this project locally ensure you have at least Node version 15.9.0 installed**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. In your terminal, cd into the folder you wish to clone the project.
+2. On this repo, locate the green 'code' button near the top of the page. Click it and copy the url it provides - [https://github.com/Dutton1990/nc-news.git](https://github.com/Dutton1990/nc-news.git)
+3. Back in your terminal, ensuring you are still in the folder you wish to clone to, enter - 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+'$git clone https://github.com/Dutton1990/nc-news.git'
 
-### `npm run eject`
+4. Once the cloning process has completed enter - 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+'$cd nc-news'
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. And finally to open to project simply enter - 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+'$code .'
