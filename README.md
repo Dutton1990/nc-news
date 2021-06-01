@@ -40,6 +40,6 @@ Hosted version - [https://christian-nc-news.herokuapp.com/api](https://christian
 
 ```$cd nc-news```
 
-5. And finally to open to project simply enter - 
+5. And finally to open the project simply enter - 
 
 ```$code .```
