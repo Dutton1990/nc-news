@@ -23,7 +23,7 @@ It also features error handling (including not being able to post a blank commen
 
 ### Back end links
 
-Back end repo - [https://github.com/Dutton1990/be-nc-news](https://github.com/Dutton1990/be-nc-news)
+Back end repo - [https://github.com/Dutton1990/be-nc-news](https://github.com/Dutton1990/be-nc-news)  
 Hosted version - [https://christian-nc-news.herokuapp.com/api](https://christian-nc-news.herokuapp.com/api)
 
 ### Instructions
