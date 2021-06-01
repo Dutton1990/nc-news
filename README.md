@@ -34,12 +34,12 @@ Hosted version - [https://christian-nc-news.herokuapp.com/api](https://christian
 2. On this repo, locate the green 'code' button near the top of the page. Click it and copy the url it provides - [https://github.com/Dutton1990/nc-news.git](https://github.com/Dutton1990/nc-news.git)
 3. Back in your terminal, ensuring you are still in the folder you wish to clone to, enter - 
 
-'$git clone https://github.com/Dutton1990/nc-news.git'
+```$git clone https://github.com/Dutton1990/nc-news.git```
 
 4. Once the cloning process has completed enter - 
 
-'$cd nc-news'
+```$cd nc-news```
 
 5. And finally to open to project simply enter - 
 
-'$code .'
+```$code .```
